@@ -14,8 +14,9 @@ public class Main {
         ListaNumeros.add(6);
         ListaNumeros.add(7);
 
+        System.out.println("Los numeros son: ");
         for (Integer lista: ListaNumeros) {
-            System.out.println("Los numeros son: " +lista);
+            System.out.println(lista);
         }
 
         ListaNumeros.clear();
@@ -30,8 +31,9 @@ public class Main {
 
         }
 
+        System.out.println("Los numeros son: ");
         for (Integer lista: ListaNumeros) {
-            System.out.println("Los numeros son: " + lista);
+            System.out.println( lista );
         }
 
     }

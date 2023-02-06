@@ -11,15 +11,15 @@ public class Main {
         int cantidad = scanner.nextInt();
 
         for (int i = 0; i < cantidad; i++) {
-            System.out.println("Ingrese el nombre en " + i + " la posicion ");
-            listaNombres.add(scanner.nextLine());
-
-
-
+            System.out.println("Ingrese el nombre en la posicion " + i );
+            String nombre = scanner.next();
+            listaNombres.add(nombre);
         }
 
+
+        System.out.println("La lista de nombres son: ");
         for (String nombres: listaNombres) {
-            System.out.println("Los nombres son: " + nombres);
+            System.out.println(nombres);
         }
 
     }
