@@ -1,6 +1,8 @@
+import entidades.ComparatorLibro;
 import entidades.Libro;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -15,6 +17,13 @@ public class Main {
 
         System.out.println("La lista de libros son: ");
 
+        for (Libro libros : listaLibros) {
+            System.out.println(libros);
+        }
+
+        Collections.sort(listaLibros, new ComparatorLibro());
+
+        System.out.println("Ordenados por Título");
         for (Libro libros : listaLibros) {
             System.out.println(libros);
         }

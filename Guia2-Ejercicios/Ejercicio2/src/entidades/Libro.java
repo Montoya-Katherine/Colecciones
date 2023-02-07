@@ -45,4 +45,6 @@ public class Libro {
                 "autor: " + autor + '\n' +
                 "paginas: " + paginas + '\n';
     }
+
+
 }
