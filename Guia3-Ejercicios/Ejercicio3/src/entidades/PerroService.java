@@ -1,7 +1,6 @@
 package entidades;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class PerroService {
     private ArrayList<Perro> listaPerro;
@@ -10,7 +9,7 @@ public class PerroService {
         this.listaPerro = new ArrayList<>();
     }
 
-    public Perro crearPerro(String nombre, String raza){
+    public Perro crearPerro(String nombre, String raza) {
         Perro perro = new Perro(nombre, raza);
         return perro;
     }
@@ -34,7 +33,7 @@ public class PerroService {
             respuesta = scanner.next();
 
 
-        }while (respuesta.equalsIgnoreCase("s"));
+        } while (respuesta.equalsIgnoreCase("s"));
         System.out.println("Lista final: ");
         for (Perro perros : listaPerro) {
             System.out.println(perros);
@@ -42,5 +41,37 @@ public class PerroService {
 
 
         return listaPerro;
+    }
+
+    public void buscarPerro() {
+        Scanner scanner = new Scanner(System.in);
+        ListIterator<Perro> interator = listaPerro.listIterator();
+        System.out.println("Cuál es nombre del perro que quiere eliminar? ");
+        String buscador = scanner.next();
+        boolean encontro = false;
+
+
+       while (interator.hasNext()) {
+           Perro perro = interator.next();
+           if (perro.getNombre().equalsIgnoreCase(buscador)) {
+               interator.remove();
+               encontro = true;
+           }
+       }
+
+       if (!encontro){
+           System.out.println("El perro buscado no fue encontrado");
+       }else {
+           System.out.println("Fue eliminado " + buscador);
+       }
+
+        System.out.println("Los perros son");
+
+       Collections.sort(listaPerro, new ComparatorPerro());
+
+        for (Perro perros : listaPerro) {
+            System.out.println(perros);
+        }
+
     }
 }
