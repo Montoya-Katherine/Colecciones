@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Bibloteca {
-    ArrayList<Libro> listaLibros = new ArrayList<>();
+    ArrayList<Libro> listaLibros ;
 
     public Bibloteca() {
         this.listaLibros = new ArrayList<>();
@@ -37,6 +37,23 @@ public class Bibloteca {
             opcion = scanner.next();
         }while (opcion.equalsIgnoreCase("x"));
         return listaLibros;
+    }
+
+    public void crearBook(){
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+
+        System.out.println("Ingrese datos del libro");
+        System.out.println("Titulo");
+        String titulo = scanner.next();
+
+        System.out.println("Autor");
+        String autor = scanner.next();
+
+        System.out.println("Numeros de paginas");
+        int pagina= scanner.nextInt();
+
+        this.listaLibros.add(aniadirLibro(titulo, autor,pagina));
+
     }
 
     public void mostarLista(){

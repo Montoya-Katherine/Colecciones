@@ -14,6 +14,19 @@ public class ServiceSerie {
         return serie;
 
     }
+    public void crearSerie(){
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        System.out.println("Ingrese datos de la Serie");
+        System.out.println("Categoria");
+        String tipo = scanner.next();
+
+        System.out.println("Nombre");
+        String nombre = scanner.next();
+
+        System.out.println("Duración");
+        double duracion = scanner.nextDouble();
+        this.listSerie.add(aniadir(tipo,nombre, duracion));
+    }
 
     public ArrayList<Serie> crear() {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
@@ -47,7 +60,7 @@ public class ServiceSerie {
     }
 
     public void menor(){
-        System.out.println("Series que duran menor de 15 min");
+        System.out.println("Series que duran menos de 15 min");
 
         for (int i = 0; i < listSerie.size(); i++) {
             if (listSerie.get(i).getDuracion() < 15){

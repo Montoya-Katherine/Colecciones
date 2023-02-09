@@ -36,6 +36,18 @@ public class ServiceVehiculo {
         return listaVehiculo;
     }
 
+    public void crearVehi(){
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        System.out.println("Ingrese datos del Vehiculo");
+        System.out.println("Marca");
+        String marca = scanner.next();
+
+        System.out.println("Stock");
+        int stock = scanner.nextInt();
+
+        this.listaVehiculo.add(aniadir(marca,stock));
+    }
+
     public void mostarList(){
         System.out.println("Mostrar los vehiculos disponinbles");
 
